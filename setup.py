@@ -34,7 +34,7 @@ setup(
     install_requires=[
         'six>=1.10.0',
         'graphene>=1.0',
-        'mongoengine>=0.10.6'
+        'mongoengine>=0.10.6',
         'iso8601',
         'singledispatch>=3.4.0.3',
     ],
