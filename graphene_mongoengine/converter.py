@@ -111,6 +111,11 @@ def convert_field_to_float(field, registry=None):
 def convert_date_to_string(field, registry=None):
     return DateTime(description=field.db_field, required=not field.null)
 
+  
+@convert_mongoengine_field.register(mongoengine.DictField)
+def convert_dict_to_jsonstring(field, registry=None):
+    return JSONString(description=field.db_field, required=not field.null)
+
 
 class NdbKeyReferenceField(Scalar):
     # def __init__(self, ndb_key_prop, graphql_type, *args, **kwargs):
